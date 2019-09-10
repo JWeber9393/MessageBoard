@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Mongoose</title>
+</head>
+
+<body>
+    <form action="/mongooses/process_update/<%= mongoose._id %>" method="POST">
+        <input type="text" name="name" placeholder="Enter Mongoose Name"><br>
+        <input type="number" name="age" placeholder="Enter Mongoose Age"><br>
+        Select Gender:<br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="radio" name="gender" value="other">Other<br>
+        <button type="submit">Update Mongoose!!</button>
+    </form>
+    <form action="/mongooses/destroy/<%= mongoose._id %>" method="POST">
+        <button type="submit">Destroy this Mongoose!!</button>
+    </form>
+</body>
+
+</html>

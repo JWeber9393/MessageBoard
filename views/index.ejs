@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </thead>
+        <% for(var mongoose of allMongooses) { %>
+        <tr>
+            <td><a href="/mongooses/view/<%= mongoose._id %>"><%= mongoose.name %></a></td>
+            <td><%= mongoose.age %></td>
+            <td><%= mongoose.gender %></td>
+            <td><a href="/mongooses/edit/<%= mongoose._id %>">Edit</a></td>
+            <td><form action="/mongooses/destroy/<%= mongoose._id %>" method="POST">
+                <button type="submit">Destroy this Mongoose!!</button>
+            </form></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
